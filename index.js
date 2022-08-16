@@ -200,6 +200,18 @@ Use the game function below to do the following:
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
 
+let compChoice;
+let randomNum = Math.random();
+if (randomNum < (1/3)) {
+  compChoice = 'rock';
+} else if (randomNum >= (1/3) && randomNum <= (2/3) ){
+  compChoice = 'paper';
+} else {
+  compChoice = 'scissors';
+}
+
+console.log(compChoice);
+
 function game(user, computer){
   /*add your code here*/
 }
