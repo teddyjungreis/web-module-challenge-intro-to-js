@@ -373,7 +373,7 @@ function vowelCounter(word) {
   let vowelCount = 0; 
   let vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
 
-  for (letter of letters){
+  for ( const letter of letters){
 if (vowels.includes(letter)){
   vowelCount++;
 }
