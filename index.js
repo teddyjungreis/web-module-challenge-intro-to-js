@@ -200,21 +200,58 @@ Use the game function below to do the following:
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
 
-let compChoice;
+let computer;
 let randomNum = Math.random();
 if (randomNum < (1/3)) {
-  compChoice = 'rock';
-} else if (randomNum >= (1/3) && randomNum <= (2/3) ){
-  compChoice = 'paper';
+  computer = 'rock';
+} else if (randomNum >= (1/3) && randomNum < (2/3) ){
+  computer = 'paper';
 } else {
-  compChoice = 'scissors';
+  computer = 'scissors';
 }
 
-console.log(compChoice);
 
 function game(user, computer){
-  /*add your code here*/
+  user = user.toLowerCase();
+  computer = computer.toLowerCase();
+  let win = "you win!";
+  let lose = "you lose!";
+  let tie = "it's a tie";
+
+  //tie
+  if (user === computer){
+    return(tie);
+
+  //user scissor scenario  
+  } else if (user === "scissors"){
+if (computer === "rock"){
+return(lose)
+} else {
+  return(win)
 }
+
+  //user paper scenario
+  } else if (user === "paper"){
+    if (computer === "rock"){
+      return(win)
+      } else {
+        return(lose)
+      }
+  // user rock scenario
+  } else if (user === "rock") {
+    if (computer === "scissors"){
+      return(win)
+      } else {
+        return(lose)
+      }
+  } else {
+    return ("Please input rock, paper, or scissors.")
+  }
+
+}
+
+game("rock",computer);
+
 
 
 
