@@ -267,7 +267,7 @@ Using the miles function below do the following:
 */
 
 function miles(km){
-  let kmToMiles = km /1.60934; 
+  let kmToMiles = km * 0.621371; 
   return (kmToMiles);
 }
 
