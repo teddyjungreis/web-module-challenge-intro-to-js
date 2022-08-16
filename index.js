@@ -266,9 +266,12 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-  /*add your code here*/
+function miles(km){
+  let kmToMiles = km /1.60934; 
+  return (kmToMiles);
 }
+
+miles(100);
 
 
 
@@ -280,9 +283,12 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
+function feet(cm){
+  let cmToFeet = cm/30.48;
+  return (cmToFeet);
 }
+
+feet(10);
 
 
 
@@ -300,8 +306,14 @@ Using the annoyingSong function below do the following:
 4. Each time the annoyingSong is run from this loop, it should console.log the string that was returned. 
 */
 
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
+function annoyingSong(number){
+      let annoyingLyric =  number + " bottles of soda on the wall, " + number + " bottles of soda, take one down pass it around " + (number - 1) + " bottles of soda on the wall";
+      return (annoyingLyric);
+}
+
+for (let i = 10; i > 0; i--) {
+  let lyric = annoyingSong(i);
+  console.log(lyric);
 }
 
 
@@ -320,9 +332,25 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
-/*Your Code here */
+function grade(gradeValue){
+
+if (gradeValue >= 90 && gradeValue <= 100){
+  return("you got an A");
 }
+  else if (gradeValue >= 80 && gradeValue <= 89){
+    return("you got a B");
+  } else if (gradeValue >= 70 && gradeValue <= 79){
+    return("you got a C");
+  } else if (gradeValue >= 60 && gradeValue <= 69){
+    return("you got a D");
+  } else if (gradeValue >= 0 && gradeValue <= 59) {
+    return("you got an F");
+  } else {
+    return("please input a real grade value");
+  }
+}
+
+grade(95);
 
 
 
@@ -339,9 +367,21 @@ HINT - try looking up the .includes() method
 */
 
 
-function vowelCounter(/*add your code here*/) {
-  /*add your code here*/
+function vowelCounter(word) {
+  let wordLower = word.toLowerCase();
+  const letters = Array.from(wordLower);
+  let vowelCount = 0; 
+  let vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
+
+  for (letter of letters){
+if (vowels.includes(letter)){
+  vowelCount++;
 }
+  }
+  return(vowelCount);
+}
+
+console.log(vowelCounter("OCTOPUS"));
 
 
 
